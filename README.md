@@ -112,7 +112,7 @@ protected Filter[] getServletFilters() {
 数据源的创建需由用户自己定义，框架并不关心你的保护资源以什么格式存储，存在哪里，你只要将这些资源交给框架即可。需要强调的是过滤器只处理URL形式的保护资源，所以你需要将URL的资源交给框架，
 
 #####流程图
-<img src="files/security.png" style="width:600px;"/>
+<img src="security.png" style="width:600px;"/>
 
 从浏览器发出请求后，会经过`SecurityFilterFactoryBean`，这是一个由spring包装过的过滤器，验证逻辑都在这个过滤器中，这个过滤器只处理URL类型的资源。首先判断URL请求的资源是否是一个静态文件，如果是的话就交给容器（例如Tomcat）本身处理，建议搭建前置服务器（例如Nginx）来专门处理这些静态文件。
 
